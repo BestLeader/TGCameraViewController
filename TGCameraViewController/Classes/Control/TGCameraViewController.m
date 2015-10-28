@@ -210,7 +210,7 @@
 {
     UIImage *photo = [TGAlbum imageWithMediaInfo:info];
     
-    TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
+    TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo bundle:bundle];
     [viewController setAlbumPhoto:YES];
     [self.navigationController pushViewController:viewController animated:NO];
     

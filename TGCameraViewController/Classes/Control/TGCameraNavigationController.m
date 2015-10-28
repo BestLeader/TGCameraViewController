@@ -94,7 +94,13 @@
 
 - (void)setupAuthorizedWithDelegate:(id<TGCameraDelegate>)delegate
 {
-    TGCameraViewController *viewController = [TGCameraViewController new];
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"TGCameraViewController" ofType:@"bundle"];
+    
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    
+    TGCameraViewController *viewController = [[TGCameraViewController alloc] initWithNibName:@"TGCameraViewController" bundle:bundle];
+    
+    //TGCameraViewController *viewController = [TGCameraViewController new];
     viewController.delegate = delegate;
     
     self.viewControllers = @[viewController];
